@@ -1,0 +1,3 @@
+D:/Aplatormio_hub/clion/stm/freertostest/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir
+D:/Aplatormio_hub/clion/stm/freertostest/cmake-build-debug-mingw-_stm32/CMakeFiles/edit_cache.dir
+D:/Aplatormio_hub/clion/stm/freertostest/cmake-build-debug-mingw-_stm32/CMakeFiles/rebuild_cache.dir
