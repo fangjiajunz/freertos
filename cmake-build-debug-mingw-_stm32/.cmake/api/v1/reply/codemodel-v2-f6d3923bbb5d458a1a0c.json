@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.29"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "freertostest.elf::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-freertostest.elf-Debug-12dbe30830027af55600.json",
+					"jsonFile" : "target-freertostest.elf-09688229acefa54b71f1.json",
 					"name" : "freertostest.elf",
 					"projectIndex" : 0
 				}
