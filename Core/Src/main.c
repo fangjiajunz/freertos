@@ -18,16 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
-#include <stdio.h>
-
-#include "OLED.h"
 #include "cmsis_os.h"
+#include "dma.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "OLED.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,18 +56,27 @@ void MX_FREERTOS_Init(void);
 
 /* USER CODE BEGIN PFP */
 void DisplayTask(void *pvParameters) {
-    // 初始化显示内容
+    // 初始化显示内
     OLED_Clear(); // 清屏
     while (1) {
-        // 显示字符串内容
-        OLED_ShowString(0, 0, "FreeRTOS Task", OLED_8X16);
+        char *str = "dasasd";
+        // 显示字符串内
+        OLED_ShowString(0, 0, str, OLED_8X16);
         OLED_ShowString(0, 16, "Hello, World!", OLED_8X16);
         // 更新屏幕
         OLED_Update();
-        // 延时 1000ms，避免任务占用过多 CPU 时间
+        // 延时 1000ms，避免任务占用过 CPU 时间
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
+
+void wrod(void *pvParameters) {
+    while (1) {
+        HAL_UART_Transmit(&huart1, (uint8_t *) "hello\r\n", 7, 100); // 限制超时时间
+        vTaskDelay(pdMS_TO_TICKS(1000)); // 每秒发送一次
+    }
+}
+
 
 /* USER CODE END PFP */
 
@@ -79,10 +86,11 @@ void DisplayTask(void *pvParameters) {
 /* USER CODE END 0 */
 
 /**
- * @brief  The application entry point.
- * @retval int
- */
+  * @brief  The application entry point.
+  * @retval int
+  */
 int main(void) {
+
     /* USER CODE BEGIN 1 */
 
     /* USER CODE END 1 */
@@ -104,16 +112,9 @@ int main(void) {
 
     /* Initialize all configured peripherals */
     MX_GPIO_Init();
-
+    MX_DMA_Init();
+    MX_USART1_UART_Init();
     /* USER CODE BEGIN 2 */
-
-    /* USER CODE END 2 */
-
-    /* Call init function for freertos objects (in cmsis_os2.c) */
-    MX_FREERTOS_Init();
-    OLED_Init();
-
-    //创建显示任务
     xTaskCreate(
             DisplayTask, // 任务函数
             "Display Task", // 任务名称
@@ -122,6 +123,21 @@ int main(void) {
             1, // 任务优先级
             NULL // 任务句柄（可选）
             );
+
+    xTaskCreate(
+            wrod, // 任务函数
+            "wrod Task", // 任务名称
+            128, // 任务栈大小（单位：字）
+            NULL, // 传递给任务的参数
+            1, // 任务优先级
+            NULL // 任务句柄（可选）
+            );
+    vTaskStartScheduler();
+
+    /* USER CODE END 2 */
+
+    /* Call init function for freertos objects (in cmsis_os2.c) */
+    MX_FREERTOS_Init();
 
     /* Start scheduler */
     osKernelStart();
@@ -134,22 +150,23 @@ int main(void) {
 
 
         /* USER CODE END WHILE */
+
         /* USER CODE BEGIN 3 */
     }
     /* USER CODE END 3 */
 }
 
 /**
- * @brief System Clock Configuration
- * @retval None
- */
+  * @brief System Clock Configuration
+  * @retval None
+  */
 void SystemClock_Config(void) {
     RCC_OscInitTypeDef RCC_OscInitStruct = {0};
     RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
     /** Initializes the RCC Oscillators according to the specified parameters
-     * in the RCC_OscInitTypeDef structure.
-     */
+    * in the RCC_OscInitTypeDef structure.
+    */
     RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
     RCC_OscInitStruct.HSIState = RCC_HSI_ON;
     RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
@@ -159,8 +176,9 @@ void SystemClock_Config(void) {
     }
 
     /** Initializes the CPU, AHB and APB buses clocks
-     */
-    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+    */
+    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
+                                  | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
     RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
     RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
     RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
@@ -176,9 +194,9 @@ void SystemClock_Config(void) {
 /* USER CODE END 4 */
 
 /**
- * @brief  This function is executed in case of error occurrence.
- * @retval None
- */
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
 void Error_Handler(void) {
     /* USER CODE BEGIN Error_Handler_Debug */
     /* User can add his own implementation to report the HAL error return state */
@@ -188,18 +206,19 @@ void Error_Handler(void) {
     /* USER CODE END Error_Handler_Debug */
 }
 
-#ifdef USE_FULL_ASSERT
+#ifdef  USE_FULL_ASSERT
 /**
- * @brief  Reports the name of the source file and the source line number
- *         where the assert_param error has occurred.
- * @param  file: pointer to the source file name
- * @param  line: assert_param error line source number
- * @retval None
- */
-void assert_failed(uint8_t *file, uint32_t line) {
-    /* USER CODE BEGIN 6 */
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
     /* User can add his own implementation to report the file name and line number,
        ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-    /* USER CODE END 6 */
+  /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
