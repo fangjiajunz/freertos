@@ -51,6 +51,42 @@ osThreadId defaultTaskHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
+typedef struct {
+    uint8_t x;
+    uint8_t y;
+    char name[16];
+} OledMess;
+
+OledMess oled1 = {0, 0, "hello"};
+OledMess oled2 = {0, 16, "ggggg"};
+OledMess oled3 = {0, 32, "fffff"};
+static uint8_t OledCanUsed = 1;
+
+void DisplayTask(void *pvParameters) {
+    OledMess *oled = pvParameters;
+    int count = 0;
+    // 初始化显示内容
+    OLED_Clear(); // 清屏
+    while (1) {
+        // 显示字符串内容
+        if (OledCanUsed) {
+            if (count < 50) {
+                OledCanUsed = 0;
+                //OLED_ShowString(oled->x, oled->y, oled->name, OLED_8X16);
+                //OLED_ShowString((oled->x) + 1, oled->y, ":", OLED_8X16);
+                OLED_ShowNum((oled->x) + 2, oled->y, count++, 6,OLED_8X16);
+                // 更新屏幕
+                OLED_Update();
+                OledCanUsed = 1;
+            } else {
+                OLED_ClearArea(oled->x, oled->y,OLED_8X16 * 8, 16); // 清屏
+                // OLED_ShowString(oled->x, oled->y, oled->name, OLED_8X16);
+                vTaskDelete(NULL);
+            }
+        }
+        vTaskDelay(pdMS_TO_TICKS(100)); // 延时 1000ms，避免任务占用过多 CPU 时间
+    }
+}
 
 /* USER CODE END FunctionPrototypes */
 
@@ -109,6 +145,30 @@ void MX_FREERTOS_Init(void) {
 
     /* USER CODE BEGIN RTOS_THREADS */
     /* add threads, ... */
+    xTaskCreate(
+            DisplayTask, // 任务函数
+            "Display Task1", // 任务名称
+            128, // 任务栈大小（单位：字）
+            &oled1, // 传递给任务的参数
+            1, // 任务优先级
+            NULL // 任务句柄（可选）
+            );
+    xTaskCreate(
+            DisplayTask, // 任务函数
+            "Display Task2", // 任务名称
+            128, // 任务栈大小（单位：字）
+            &oled2, // 传递给任务的参数
+            1, // 任务优先级
+            NULL // 任务句柄（可选）
+            );
+    xTaskCreate(
+            DisplayTask, // 任务函数
+            "Display Task3", // 任务名称
+            128, // 任务栈大小（单位：字）
+            &oled3, // 传递给任务的参数
+            1, // 任务优先级
+            NULL // 任务句柄（可选）
+            );
     /* USER CODE END RTOS_THREADS */
 
 }

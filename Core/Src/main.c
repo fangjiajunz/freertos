@@ -57,19 +57,7 @@ void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 
 /* USER CODE BEGIN PFP */
-void DisplayTask(void *pvParameters) {
-    // 初始化显示内容
-    OLED_Clear(); // 清屏
-    while (1) {
-        // 显示字符串内容
-        OLED_ShowString(0, 0, "FreeRTOS Task", OLED_8X16);
-        OLED_ShowString(0, 16, "Hello, World!", OLED_8X16);
-        // 更新屏幕
-        OLED_Update();
-        // 延时 1000ms，避免任务占用过多 CPU 时间
-        vTaskDelay(pdMS_TO_TICKS(1000));
-    }
-}
+
 
 /* USER CODE END PFP */
 
@@ -114,14 +102,6 @@ int main(void) {
     OLED_Init();
 
     //创建显示任务
-    xTaskCreate(
-            DisplayTask, // 任务函数
-            "Display Task", // 任务名称
-            128, // 任务栈大小（单位：字）
-            NULL, // 传递给任务的参数
-            1, // 任务优先级
-            NULL // 任务句柄（可选）
-            );
 
     /* Start scheduler */
     osKernelStart();
