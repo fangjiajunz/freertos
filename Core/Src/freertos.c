@@ -145,13 +145,14 @@ void MX_FREERTOS_Init(void) {
 
     /* USER CODE BEGIN RTOS_THREADS */
     /* add threads, ... */
+    TaskHandle_t oeldtask_handle = NULL;
     xTaskCreate(
             DisplayTask, // 任务函数
             "Display Task1", // 任务名称
             128, // 任务栈大小（单位：字）
             &oled1, // 传递给任务的参数
             1, // 任务优先级
-            NULL // 任务句柄（可选）
+            &oeldtask_handle // 任务句柄（可选）
             );
     xTaskCreate(
             DisplayTask, // 任务函数

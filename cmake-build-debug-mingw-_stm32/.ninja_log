@@ -70,3 +70,5 @@
 1695	2414	7550029373707527	CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj	8174dadc0fcec21b
 1779	2499	7550029374548281	CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj	9356d86bdff0268b
 2499	2866	7550029377593632	freertostest.elf	4acdb215dc19c52a
+20	472	7550036014649356	CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj	8131b34aed015dca
+475	873	7550036017935282	freertostest.elf	4acdb215dc19c52a

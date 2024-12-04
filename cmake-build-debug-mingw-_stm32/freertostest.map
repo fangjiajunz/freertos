@@ -1947,173 +1947,172 @@ LOAD D:/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.
                 0x080001b8       0x18 CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj
                 0x080001b8                vApplicationGetIdleTaskMemory
  .text.MX_FREERTOS_Init
-                0x080001d0       0x84 CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj
+                0x080001d0       0x88 CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj
                 0x080001d0                MX_FREERTOS_Init
  .text.MX_GPIO_Init
-                0x08000254       0x78 CMakeFiles/freertostest.elf.dir/Core/Src/gpio.c.obj
-                0x08000254                MX_GPIO_Init
+                0x08000258       0x78 CMakeFiles/freertostest.elf.dir/Core/Src/gpio.c.obj
+                0x08000258                MX_GPIO_Init
  .text.Error_Handler
-                0x080002cc        0x4 CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
-                0x080002cc                Error_Handler
+                0x080002d0        0x4 CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
+                0x080002d0                Error_Handler
  .text.SystemClock_Config
-                0x080002d0       0x52 CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
-                0x080002d0                SystemClock_Config
- .text.main     0x08000322       0x20 CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
-                0x08000322                main
- *fill*         0x08000342        0x2 
+                0x080002d4       0x52 CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
+                0x080002d4                SystemClock_Config
+ .text.main     0x08000326       0x20 CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
+                0x08000326                main
+ *fill*         0x08000346        0x2 
  .text.HAL_MspInit
-                0x08000344       0x54 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj
-                0x08000344                HAL_MspInit
+                0x08000348       0x54 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj
+                0x08000348                HAL_MspInit
  .text.NMI_Handler
-                0x08000398        0x2 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
-                0x08000398                NMI_Handler
- .text.HardFault_Handler
-                0x0800039a        0x2 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
-                0x0800039a                HardFault_Handler
- .text.MemManage_Handler
                 0x0800039c        0x2 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
-                0x0800039c                MemManage_Handler
- .text.BusFault_Handler
+                0x0800039c                NMI_Handler
+ .text.HardFault_Handler
                 0x0800039e        0x2 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
-                0x0800039e                BusFault_Handler
- .text.UsageFault_Handler
+                0x0800039e                HardFault_Handler
+ .text.MemManage_Handler
                 0x080003a0        0x2 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
-                0x080003a0                UsageFault_Handler
- .text.DebugMon_Handler
+                0x080003a0                MemManage_Handler
+ .text.BusFault_Handler
                 0x080003a2        0x2 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
-                0x080003a2                DebugMon_Handler
+                0x080003a2                BusFault_Handler
+ .text.UsageFault_Handler
+                0x080003a4        0x2 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
+                0x080003a4                UsageFault_Handler
+ .text.DebugMon_Handler
+                0x080003a6        0x2 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
+                0x080003a6                DebugMon_Handler
  .text.SysTick_Handler
-                0x080003a4       0x16 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
-                0x080003a4                SysTick_Handler
+                0x080003a8       0x16 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
+                0x080003a8                SysTick_Handler
  .text.SystemInit
-                0x080003ba        0x2 CMakeFiles/freertostest.elf.dir/Core/Src/system_stm32f1xx.c.obj
-                0x080003ba                SystemInit
+                0x080003be        0x2 CMakeFiles/freertostest.elf.dir/Core/Src/system_stm32f1xx.c.obj
+                0x080003be                SystemInit
  .text.Reset_Handler
-                0x080003bc       0x48 CMakeFiles/freertostest.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj
-                0x080003bc                Reset_Handler
+                0x080003c0       0x48 CMakeFiles/freertostest.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj
+                0x080003c0                Reset_Handler
  .text.Default_Handler
-                0x08000404        0x2 CMakeFiles/freertostest.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj
-                0x08000404                RTC_Alarm_IRQHandler
-                0x08000404                EXTI2_IRQHandler
-                0x08000404                TIM1_CC_IRQHandler
-                0x08000404                PVD_IRQHandler
-                0x08000404                EXTI3_IRQHandler
-                0x08000404                EXTI0_IRQHandler
-                0x08000404                I2C2_EV_IRQHandler
-                0x08000404                ADC1_2_IRQHandler
-                0x08000404                SPI1_IRQHandler
-                0x08000404                TAMPER_IRQHandler
-                0x08000404                DMA1_Channel4_IRQHandler
-                0x08000404                USART3_IRQHandler
-                0x08000404                RTC_IRQHandler
-                0x08000404                DMA1_Channel7_IRQHandler
-                0x08000404                CAN1_RX1_IRQHandler
-                0x08000404                TIM4_IRQHandler
-                0x08000404                I2C1_EV_IRQHandler
-                0x08000404                DMA1_Channel6_IRQHandler
-                0x08000404                TIM3_IRQHandler
-                0x08000404                RCC_IRQHandler
-                0x08000404                TIM1_TRG_COM_IRQHandler
-                0x08000404                DMA1_Channel1_IRQHandler
-                0x08000404                Default_Handler
-                0x08000404                EXTI15_10_IRQHandler
-                0x08000404                EXTI9_5_IRQHandler
-                0x08000404                SPI2_IRQHandler
-                0x08000404                DMA1_Channel5_IRQHandler
-                0x08000404                EXTI4_IRQHandler
-                0x08000404                USB_LP_CAN1_RX0_IRQHandler
-                0x08000404                USB_HP_CAN1_TX_IRQHandler
-                0x08000404                DMA1_Channel3_IRQHandler
-                0x08000404                TIM1_UP_IRQHandler
-                0x08000404                WWDG_IRQHandler
-                0x08000404                TIM2_IRQHandler
-                0x08000404                TIM1_BRK_IRQHandler
-                0x08000404                EXTI1_IRQHandler
-                0x08000404                USART2_IRQHandler
-                0x08000404                I2C2_ER_IRQHandler
-                0x08000404                DMA1_Channel2_IRQHandler
-                0x08000404                CAN1_SCE_IRQHandler
-                0x08000404                FLASH_IRQHandler
-                0x08000404                USART1_IRQHandler
-                0x08000404                I2C1_ER_IRQHandler
-                0x08000404                USBWakeUp_IRQHandler
- *fill*         0x08000406        0x2 
+                0x08000408        0x2 CMakeFiles/freertostest.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj
+                0x08000408                RTC_Alarm_IRQHandler
+                0x08000408                EXTI2_IRQHandler
+                0x08000408                TIM1_CC_IRQHandler
+                0x08000408                PVD_IRQHandler
+                0x08000408                EXTI3_IRQHandler
+                0x08000408                EXTI0_IRQHandler
+                0x08000408                I2C2_EV_IRQHandler
+                0x08000408                ADC1_2_IRQHandler
+                0x08000408                SPI1_IRQHandler
+                0x08000408                TAMPER_IRQHandler
+                0x08000408                DMA1_Channel4_IRQHandler
+                0x08000408                USART3_IRQHandler
+                0x08000408                RTC_IRQHandler
+                0x08000408                DMA1_Channel7_IRQHandler
+                0x08000408                CAN1_RX1_IRQHandler
+                0x08000408                TIM4_IRQHandler
+                0x08000408                I2C1_EV_IRQHandler
+                0x08000408                DMA1_Channel6_IRQHandler
+                0x08000408                TIM3_IRQHandler
+                0x08000408                RCC_IRQHandler
+                0x08000408                TIM1_TRG_COM_IRQHandler
+                0x08000408                DMA1_Channel1_IRQHandler
+                0x08000408                Default_Handler
+                0x08000408                EXTI15_10_IRQHandler
+                0x08000408                EXTI9_5_IRQHandler
+                0x08000408                SPI2_IRQHandler
+                0x08000408                DMA1_Channel5_IRQHandler
+                0x08000408                EXTI4_IRQHandler
+                0x08000408                USB_LP_CAN1_RX0_IRQHandler
+                0x08000408                USB_HP_CAN1_TX_IRQHandler
+                0x08000408                DMA1_Channel3_IRQHandler
+                0x08000408                TIM1_UP_IRQHandler
+                0x08000408                WWDG_IRQHandler
+                0x08000408                TIM2_IRQHandler
+                0x08000408                TIM1_BRK_IRQHandler
+                0x08000408                EXTI1_IRQHandler
+                0x08000408                USART2_IRQHandler
+                0x08000408                I2C2_ER_IRQHandler
+                0x08000408                DMA1_Channel2_IRQHandler
+                0x08000408                CAN1_SCE_IRQHandler
+                0x08000408                FLASH_IRQHandler
+                0x08000408                USART1_IRQHandler
+                0x08000408                I2C1_ER_IRQHandler
+                0x08000408                USBWakeUp_IRQHandler
+ *fill*         0x0800040a        0x2 
  .text.HAL_InitTick
-                0x08000408       0x4c CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
-                0x08000408                HAL_InitTick
+                0x0800040c       0x4c CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+                0x0800040c                HAL_InitTick
  .text.HAL_Init
-                0x08000454       0x24 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
-                0x08000454                HAL_Init
+                0x08000458       0x24 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+                0x08000458                HAL_Init
  .text.HAL_IncTick
-                0x08000478       0x18 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
-                0x08000478                HAL_IncTick
+                0x0800047c       0x18 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+                0x0800047c                HAL_IncTick
  .text.HAL_GetTick
-                0x08000490        0xc CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
-                0x08000490                HAL_GetTick
+                0x08000494        0xc CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+                0x08000494                HAL_GetTick
  .text.__NVIC_SetPriority
-                0x0800049c       0x28 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x080004a0       0x28 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
  .text.NVIC_EncodePriority
-                0x080004c4       0x3e CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
- *fill*         0x08000502        0x2 
+                0x080004c8       0x3e CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+ *fill*         0x08000506        0x2 
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08000504       0x24 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
-                0x08000504                HAL_NVIC_SetPriorityGrouping
+                0x08000508       0x24 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x08000508                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08000528       0x20 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
-                0x08000528                HAL_NVIC_SetPriority
+                0x0800052c       0x20 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x0800052c                HAL_NVIC_SetPriority
  .text.HAL_SYSTICK_Config
-                0x08000548       0x28 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
-                0x08000548                HAL_SYSTICK_Config
+                0x0800054c       0x28 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+                0x0800054c                HAL_SYSTICK_Config
  .text.HAL_GPIO_Init
-                0x08000570      0x21c CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
-                0x08000570                HAL_GPIO_Init
+                0x08000574      0x21c CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+                0x08000574                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x0800078c        0xc CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
-                0x0800078c                HAL_GPIO_WritePin
+                0x08000790        0xc CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+                0x08000790                HAL_GPIO_WritePin
  .text.RCC_Delay
-                0x08000798       0x2c CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x0800079c       0x2c CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
  .text.HAL_RCC_OscConfig
-                0x080007c4      0x410 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
-                0x080007c4                HAL_RCC_OscConfig
+                0x080007c8      0x410 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x080007c8                HAL_RCC_OscConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x08000bd4       0x54 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
-                0x08000bd4                HAL_RCC_GetSysClockFreq
+                0x08000bd8       0x54 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x08000bd8                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_ClockConfig
-                0x08000c28      0x16c CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
-                0x08000c28                HAL_RCC_ClockConfig
+                0x08000c2c      0x16c CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+                0x08000c2c                HAL_RCC_ClockConfig
  .text.makeFreeRtosPriority
-                0x08000d94        0xc CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+                0x08000d98        0xc CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
  .text.osKernelStart
-                0x08000da0        0xa CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
-                0x08000da0                osKernelStart
+                0x08000da4        0xa CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+                0x08000da4                osKernelStart
  .text.osThreadCreate
-                0x08000daa       0x66 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
-                0x08000daa                osThreadCreate
- .text.osDelay  0x08000e10        0xe CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
-                0x08000e10                osDelay
+                0x08000dae       0x66 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+                0x08000dae                osThreadCreate
+ .text.osDelay  0x08000e14        0xe CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+                0x08000e14                osDelay
  .text.vListInitialise
-                0x08000e1e       0x16 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x08000e1e                vListInitialise
+                0x08000e22       0x16 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x08000e22                vListInitialise
  .text.vListInitialiseItem
-                0x08000e34        0x6 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x08000e34                vListInitialiseItem
+                0x08000e38        0x6 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x08000e38                vListInitialiseItem
  .text.vListInsertEnd
-                0x08000e3a       0x16 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x08000e3a                vListInsertEnd
+                0x08000e3e       0x16 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x08000e3e                vListInsertEnd
  .text.vListInsert
-                0x08000e50       0x32 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x08000e50                vListInsert
+                0x08000e54       0x32 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x08000e54                vListInsert
  .text.uxListRemove
-                0x08000e82       0x26 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x08000e82                uxListRemove
+                0x08000e86       0x26 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x08000e86                uxListRemove
  .text.prvTaskExitError
-                0x08000ea8       0x40 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
+                0x08000eac       0x40 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
  .text.prvPortStartFirstTask
-                0x08000ee8       0x20 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
+                0x08000eec       0x20 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
  .text.pxPortInitialiseStack
-                0x08000f08       0x24 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
-                0x08000f08                pxPortInitialiseStack
- *fill*         0x08000f2c        0x4 
+                0x08000f0c       0x24 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
+                0x08000f0c                pxPortInitialiseStack
  .text.SVC_Handler
                 0x08000f30       0x24 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
                 0x08000f30                SVC_Handler
@@ -2581,25 +2580,25 @@ LOAD D:/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.
 LOAD D:/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD D:/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x00000000     0xbfc9
- .debug_info    0x00000000      0x7db CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj
- .debug_info    0x000007db      0x2ee CMakeFiles/freertostest.elf.dir/Core/Src/gpio.c.obj
- .debug_info    0x00000ac9      0x3cc CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
- .debug_info    0x00000e95      0x382 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj
- .debug_info    0x00001217      0x137 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
- .debug_info    0x0000134e      0x22d CMakeFiles/freertostest.elf.dir/Core/Src/system_stm32f1xx.c.obj
- .debug_info    0x0000157b       0x30 CMakeFiles/freertostest.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj
- .debug_info    0x000015ab      0x7a2 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
- .debug_info    0x00001d4d      0xcad CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
- .debug_info    0x000029fa      0x604 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
- .debug_info    0x00002ffe      0x9c7 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
- .debug_info    0x000039c5     0x23f2 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
- .debug_info    0x00005db7      0x2bf CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
- .debug_info    0x00006076      0x505 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
- .debug_info    0x0000657b      0x593 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .debug_info    0x00006b0e     0x286a CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .debug_info    0x00009378     0x29f5 CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj
- .debug_info    0x0000bd6d      0x25c CMakeFiles/freertostest.elf.dir/oled/OLED_Data.c.obj
+.debug_info     0x00000000     0xbfd7
+ .debug_info    0x00000000      0x7e9 CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj
+ .debug_info    0x000007e9      0x2ee CMakeFiles/freertostest.elf.dir/Core/Src/gpio.c.obj
+ .debug_info    0x00000ad7      0x3cc CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
+ .debug_info    0x00000ea3      0x382 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj
+ .debug_info    0x00001225      0x137 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
+ .debug_info    0x0000135c      0x22d CMakeFiles/freertostest.elf.dir/Core/Src/system_stm32f1xx.c.obj
+ .debug_info    0x00001589       0x30 CMakeFiles/freertostest.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj
+ .debug_info    0x000015b9      0x7a2 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+ .debug_info    0x00001d5b      0xcad CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+ .debug_info    0x00002a08      0x604 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+ .debug_info    0x0000300c      0x9c7 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ .debug_info    0x000039d3     0x23f2 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+ .debug_info    0x00005dc5      0x2bf CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+ .debug_info    0x00006084      0x505 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
+ .debug_info    0x00006589      0x593 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .debug_info    0x00006b1c     0x286a CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_info    0x00009386     0x29f5 CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj
+ .debug_info    0x0000bd7b      0x25c CMakeFiles/freertostest.elf.dir/oled/OLED_Data.c.obj
 
 .debug_abbrev   0x00000000     0x23c9
  .debug_abbrev  0x00000000      0x214 CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj
@@ -2725,62 +2724,62 @@ LOAD D:/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.
  .debug_rnglists
                 0x000006a5       0xf1 CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj
 
-.debug_line     0x00000000     0x9a8e
- .debug_line    0x00000000      0x3e5 CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj
- .debug_line    0x000003e5      0x281 CMakeFiles/freertostest.elf.dir/Core/Src/gpio.c.obj
- .debug_line    0x00000666      0x42d CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
- .debug_line    0x00000a93      0x267 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj
- .debug_line    0x00000cfa      0x2d6 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
- .debug_line    0x00000fd0      0x2cc CMakeFiles/freertostest.elf.dir/Core/Src/system_stm32f1xx.c.obj
- .debug_line    0x0000129c       0x78 CMakeFiles/freertostest.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj
- .debug_line    0x00001314      0x606 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
- .debug_line    0x0000191a      0x780 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
- .debug_line    0x0000209a      0x65a CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
- .debug_line    0x000026f4      0xcc5 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
- .debug_line    0x000033b9     0x1343 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
- .debug_line    0x000046fc      0x423 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
- .debug_line    0x00004b1f      0x6a3 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
- .debug_line    0x000051c2      0x7e2 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .debug_line    0x000059a4     0x2453 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .debug_line    0x00007df7     0x1b1f CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj
- .debug_line    0x00009916      0x178 CMakeFiles/freertostest.elf.dir/oled/OLED_Data.c.obj
+.debug_line     0x00000000     0x9a96
+ .debug_line    0x00000000      0x3ed CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj
+ .debug_line    0x000003ed      0x281 CMakeFiles/freertostest.elf.dir/Core/Src/gpio.c.obj
+ .debug_line    0x0000066e      0x42d CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
+ .debug_line    0x00000a9b      0x267 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj
+ .debug_line    0x00000d02      0x2d6 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
+ .debug_line    0x00000fd8      0x2cc CMakeFiles/freertostest.elf.dir/Core/Src/system_stm32f1xx.c.obj
+ .debug_line    0x000012a4       0x78 CMakeFiles/freertostest.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj
+ .debug_line    0x0000131c      0x606 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+ .debug_line    0x00001922      0x780 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+ .debug_line    0x000020a2      0x65a CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+ .debug_line    0x000026fc      0xcc5 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ .debug_line    0x000033c1     0x1343 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+ .debug_line    0x00004704      0x423 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+ .debug_line    0x00004b27      0x6a3 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
+ .debug_line    0x000051ca      0x7e2 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .debug_line    0x000059ac     0x2453 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_line    0x00007dff     0x1b1f CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj
+ .debug_line    0x0000991e      0x178 CMakeFiles/freertostest.elf.dir/oled/OLED_Data.c.obj
 
-.debug_str      0x00000000     0x3819
- .debug_str     0x00000000      0x617 CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj
-                                0x6ab (size before relaxing)
- .debug_str     0x00000617      0x119 CMakeFiles/freertostest.elf.dir/Core/Src/gpio.c.obj
+.debug_str      0x00000000     0x3822
+ .debug_str     0x00000000      0x627 CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj
+                                0x6bb (size before relaxing)
+ .debug_str     0x00000627      0x119 CMakeFiles/freertostest.elf.dir/Core/Src/gpio.c.obj
                                 0x2d5 (size before relaxing)
- .debug_str     0x00000730      0x20d CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
+ .debug_str     0x00000740      0x20d CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj
                                 0x4c1 (size before relaxing)
- .debug_str     0x0000093d      0x374 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj
+ .debug_str     0x0000094d      0x374 CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj
                                 0x55d (size before relaxing)
- .debug_str     0x00000cb1       0xed CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
+ .debug_str     0x00000cc1       0xed CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj
                                 0x28c (size before relaxing)
- .debug_str     0x00000d9e       0xa4 CMakeFiles/freertostest.elf.dir/Core/Src/system_stm32f1xx.c.obj
+ .debug_str     0x00000dae       0xa4 CMakeFiles/freertostest.elf.dir/Core/Src/system_stm32f1xx.c.obj
                                 0x29e (size before relaxing)
- .debug_str     0x00000e42       0x6a CMakeFiles/freertostest.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj
+ .debug_str     0x00000e52       0x6a CMakeFiles/freertostest.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj
                                  0xb2 (size before relaxing)
- .debug_str     0x00000eac      0x322 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+ .debug_str     0x00000ebc      0x322 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
                                 0x878 (size before relaxing)
- .debug_str     0x000011ce      0x3d8 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+ .debug_str     0x000011de      0x3d8 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
                                 0x91d (size before relaxing)
- .debug_str     0x000015a6      0x142 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+ .debug_str     0x000015b6      0x142 CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
                                 0x44a (size before relaxing)
- .debug_str     0x000016e8      0x21a CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ .debug_str     0x000016f8      0x21a CMakeFiles/freertostest.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
                                 0x675 (size before relaxing)
- .debug_str     0x00001902      0xaba CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+ .debug_str     0x00001912      0xab3 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
                                0x10c6 (size before relaxing)
- .debug_str     0x000023bc      0x15f CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+ .debug_str     0x000023c5      0x15f CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
                                 0x33f (size before relaxing)
- .debug_str     0x0000251b      0x236 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
+ .debug_str     0x00002524      0x236 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
                                 0x4af (size before relaxing)
- .debug_str     0x00002751      0x2f1 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .debug_str     0x0000275a      0x2f1 CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
                                 0x558 (size before relaxing)
- .debug_str     0x00002a42      0x91e CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_str     0x00002a4b      0x91e CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
                                0x1058 (size before relaxing)
- .debug_str     0x00003360      0x46a CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj
+ .debug_str     0x00003369      0x46a CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj
                                 0x7b9 (size before relaxing)
- .debug_str     0x000037ca       0x4f CMakeFiles/freertostest.elf.dir/oled/OLED_Data.c.obj
+ .debug_str     0x000037d3       0x4f CMakeFiles/freertostest.elf.dir/oled/OLED_Data.c.obj
                                 0x224 (size before relaxing)
 
 .comment        0x00000000       0x43
