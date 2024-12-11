@@ -147,8 +147,7 @@ void OLED_GPIO_Init(void) {
 
     /* 在初始化前，加入适量延时，待OLED供电稳定 */
     for (i = 0; i < 1000; i++) {
-        for (j = 0; j < 1000; j++)
-            ;
+        for (j = 0; j < 1000; j++);
     }
 
     /* 使能GPIOB的时钟 */
@@ -215,7 +214,6 @@ void OLED_I2C_SendByte(uint8_t Byte) {
         OLED_W_SCL(1); // 释放SCL，从机在SCL高电平期间读取SDA
         OLED_W_SCL(0); // 拉低SCL，主机开始发送下一位数据
     }
-
     OLED_W_SCL(1); // 额外的一个时钟，不处理应答信号
     OLED_W_SCL(0);
 }
@@ -364,7 +362,8 @@ uint8_t OLED_pnpoly(uint8_t nvert, int16_t *vertx, int16_t *verty, int16_t testx
     /*此算法由W. Randolph Franklin提出*/
     /*参考链接：https://wrfranklin.org/Research/Short_Notes/pnpoly.html*/
     for (i = 0, j = nvert - 1; i < nvert; j = i++) {
-        if (((verty[i] > testy) != (verty[j] > testy)) && (testx < (vertx[j] - vertx[i]) * (testy - verty[i]) / (verty[j] - verty[i]) + vertx[i])) {
+        if (((verty[i] > testy) != (verty[j] > testy)) && (
+                testx < (vertx[j] - vertx[i]) * (testy - verty[i]) / (verty[j] - verty[i]) + vertx[i])) {
             c = !c;
         }
     }
@@ -1210,76 +1209,71 @@ void OLED_DrawTriangle(int16_t X0, int16_t Y0, int16_t X1, int16_t Y1, int16_t X
  * 返 回 值：无
  * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
   */
-void OLED_DrawCircle(int16_t X, int16_t Y, uint8_t Radius, uint8_t IsFilled)
-{
-	int16_t x, y, d, j;
+void OLED_DrawCircle(int16_t X, int16_t Y, uint8_t Radius, uint8_t IsFilled) {
+    int16_t x, y, d, j;
 
-	/*使用Bresenham算法画圆，可以避免耗时的浮点运算，效率更高*/
-	/*参考文档：https://www.cs.montana.edu/courses/spring2009/425/dslectures/Bresenham.pdf*/
-	/*参考教程：https://www.bilibili.com/video/BV1VM4y1u7wJ*/
+    /*使用Bresenham算法画圆，可以避免耗时的浮点运算，效率更高*/
+    /*参考文档：https://www.cs.montana.edu/courses/spring2009/425/dslectures/Bresenham.pdf*/
+    /*参考教程：https://www.bilibili.com/video/BV1VM4y1u7wJ*/
 
-	d = 1 - Radius;
-	x = 0;
-	y = Radius;
+    d = 1 - Radius;
+    x = 0;
+    y = Radius;
 
-	/*画每个八分之一圆弧的起始点*/
-	OLED_DrawPoint(X + x, Y + y);
-	OLED_DrawPoint(X - x, Y - y);
-	OLED_DrawPoint(X + y, Y + x);
-	OLED_DrawPoint(X - y, Y - x);
+    /*画每个八分之一圆弧的起始点*/
+    OLED_DrawPoint(X + x, Y + y);
+    OLED_DrawPoint(X - x, Y - y);
+    OLED_DrawPoint(X + y, Y + x);
+    OLED_DrawPoint(X - y, Y - x);
 
-	if (IsFilled)		//指定圆填充
-	{
-		/*遍历起始点Y坐标*/
-		for (j = -y; j < y; j ++)
-		{
-			/*在指定区域画点，填充部分圆*/
-			OLED_DrawPoint(X, Y + j);
-		}
-	}
+    if (IsFilled) //指定圆填充
+    {
+        /*遍历起始点Y坐标*/
+        for (j = -y; j < y; j++) {
+            /*在指定区域画点，填充部分圆*/
+            OLED_DrawPoint(X, Y + j);
+        }
+    }
 
-	while (x < y)		//遍历X轴的每个点
-	{
-		x ++;
-		if (d < 0)		//下一个点在当前点东方
-		{
-			d += 2 * x + 1;
-		}
-		else			//下一个点在当前点东南方
-		{
-			y --;
-			d += 2 * (x - y) + 1;
-		}
+    while (x < y) //遍历X轴的每个点
+    {
+        x++;
+        if (d < 0) //下一个点在当前点东方
+        {
+            d += 2 * x + 1;
+        } else //下一个点在当前点东南方
+        {
+            y--;
+            d += 2 * (x - y) + 1;
+        }
 
-		/*画每个八分之一圆弧的点*/
-		OLED_DrawPoint(X + x, Y + y);
-		OLED_DrawPoint(X + y, Y + x);
-		OLED_DrawPoint(X - x, Y - y);
-		OLED_DrawPoint(X - y, Y - x);
-		OLED_DrawPoint(X + x, Y - y);
-		OLED_DrawPoint(X + y, Y - x);
-		OLED_DrawPoint(X - x, Y + y);
-		OLED_DrawPoint(X - y, Y + x);
+        /*画每个八分之一圆弧的点*/
+        OLED_DrawPoint(X + x, Y + y);
+        OLED_DrawPoint(X + y, Y + x);
+        OLED_DrawPoint(X - x, Y - y);
+        OLED_DrawPoint(X - y, Y - x);
+        OLED_DrawPoint(X + x, Y - y);
+        OLED_DrawPoint(X + y, Y - x);
+        OLED_DrawPoint(X - x, Y + y);
+        OLED_DrawPoint(X - y, Y + x);
 
-		if (IsFilled)	//指定圆填充
-		{
-			/*遍历中间部分*/
-			for (j = -y; j < y; j ++)
-			{
-				/*在指定区域画点，填充部分圆*/
-				OLED_DrawPoint(X + x, Y + j);
-				OLED_DrawPoint(X - x, Y + j);
-			}
+        if (IsFilled) //指定圆填充
+        {
+            /*遍历中间部分*/
+            for (j = -y; j < y; j++) {
+                /*在指定区域画点，填充部分圆*/
+                OLED_DrawPoint(X + x, Y + j);
+                OLED_DrawPoint(X - x, Y + j);
+            }
 
-			/*遍历两侧部分*/
-			for (j = -x; j < x; j ++)
-			{
-				/*在指定区域画点，填充部分圆*/
-				OLED_DrawPoint(X - y, Y + j);
-				OLED_DrawPoint(X + y, Y + j);
-			}
-		}
-	}
+            /*遍历两侧部分*/
+            for (j = -x; j < x; j++) {
+                /*在指定区域画点，填充部分圆*/
+                OLED_DrawPoint(X - y, Y + j);
+                OLED_DrawPoint(X + y, Y + j);
+            }
+        }
+    }
 }
 
 /**
@@ -1294,102 +1288,94 @@ void OLED_DrawCircle(int16_t X, int16_t Y, uint8_t Radius, uint8_t IsFilled)
   * 返 回 值：无
   * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
   */
-void OLED_DrawEllipse(int16_t X, int16_t Y, uint8_t A, uint8_t B, uint8_t IsFilled)
-{
-	int16_t x, y, j;
-	int16_t a = A, b = B;
-	float d1, d2;
+void OLED_DrawEllipse(int16_t X, int16_t Y, uint8_t A, uint8_t B, uint8_t IsFilled) {
+    int16_t x, y, j;
+    int16_t a = A, b = B;
+    float d1, d2;
 
-	/*使用Bresenham算法画椭圆，可以避免部分耗时的浮点运算，效率更高*/
-	/*参考链接：https://blog.csdn.net/myf_666/article/details/128167392*/
+    /*使用Bresenham算法画椭圆，可以避免部分耗时的浮点运算，效率更高*/
+    /*参考链接：https://blog.csdn.net/myf_666/article/details/128167392*/
 
-	x = 0;
-	y = b;
-	d1 = b * b + a * a * (-b + 0.5);
+    x = 0;
+    y = b;
+    d1 = b * b + a * a * (-b + 0.5);
 
-	if (IsFilled)	//指定椭圆填充
-	{
-		/*遍历起始点Y坐标*/
-		for (j = -y; j < y; j ++)
-		{
-			/*在指定区域画点，填充部分椭圆*/
-			OLED_DrawPoint(X, Y + j);
-			OLED_DrawPoint(X, Y + j);
-		}
-	}
+    if (IsFilled) //指定椭圆填充
+    {
+        /*遍历起始点Y坐标*/
+        for (j = -y; j < y; j++) {
+            /*在指定区域画点，填充部分椭圆*/
+            OLED_DrawPoint(X, Y + j);
+            OLED_DrawPoint(X, Y + j);
+        }
+    }
 
-	/*画椭圆弧的起始点*/
-	OLED_DrawPoint(X + x, Y + y);
-	OLED_DrawPoint(X - x, Y - y);
-	OLED_DrawPoint(X - x, Y + y);
-	OLED_DrawPoint(X + x, Y - y);
+    /*画椭圆弧的起始点*/
+    OLED_DrawPoint(X + x, Y + y);
+    OLED_DrawPoint(X - x, Y - y);
+    OLED_DrawPoint(X - x, Y + y);
+    OLED_DrawPoint(X + x, Y - y);
 
-	/*画椭圆中间部分*/
-	while (b * b * (x + 1) < a * a * (y - 0.5))
-	{
-		if (d1 <= 0)		//下一个点在当前点东方
-		{
-			d1 += b * b * (2 * x + 3);
-		}
-		else				//下一个点在当前点东南方
-		{
-			d1 += b * b * (2 * x + 3) + a * a * (-2 * y + 2);
-			y --;
-		}
-		x ++;
+    /*画椭圆中间部分*/
+    while (b * b * (x + 1) < a * a * (y - 0.5)) {
+        if (d1 <= 0) //下一个点在当前点东方
+        {
+            d1 += b * b * (2 * x + 3);
+        } else //下一个点在当前点东南方
+        {
+            d1 += b * b * (2 * x + 3) + a * a * (-2 * y + 2);
+            y--;
+        }
+        x++;
 
-		if (IsFilled)	//指定椭圆填充
-		{
-			/*遍历中间部分*/
-			for (j = -y; j < y; j ++)
-			{
-				/*在指定区域画点，填充部分椭圆*/
-				OLED_DrawPoint(X + x, Y + j);
-				OLED_DrawPoint(X - x, Y + j);
-			}
-		}
+        if (IsFilled) //指定椭圆填充
+        {
+            /*遍历中间部分*/
+            for (j = -y; j < y; j++) {
+                /*在指定区域画点，填充部分椭圆*/
+                OLED_DrawPoint(X + x, Y + j);
+                OLED_DrawPoint(X - x, Y + j);
+            }
+        }
 
-		/*画椭圆中间部分圆弧*/
-		OLED_DrawPoint(X + x, Y + y);
-		OLED_DrawPoint(X - x, Y - y);
-		OLED_DrawPoint(X - x, Y + y);
-		OLED_DrawPoint(X + x, Y - y);
-	}
+        /*画椭圆中间部分圆弧*/
+        OLED_DrawPoint(X + x, Y + y);
+        OLED_DrawPoint(X - x, Y - y);
+        OLED_DrawPoint(X - x, Y + y);
+        OLED_DrawPoint(X + x, Y - y);
+    }
 
-	/*画椭圆两侧部分*/
-	d2 = b * b * (x + 0.5) * (x + 0.5) + a * a * (y - 1) * (y - 1) - a * a * b * b;
+    /*画椭圆两侧部分*/
+    d2 = b * b * (x + 0.5) * (x + 0.5) + a * a * (y - 1) * (y - 1) - a * a * b * b;
 
-	while (y > 0)
-	{
-		if (d2 <= 0)		//下一个点在当前点东方
-		{
-			d2 += b * b * (2 * x + 2) + a * a * (-2 * y + 3);
-			x ++;
+    while (y > 0) {
+        if (d2 <= 0) //下一个点在当前点东方
+        {
+            d2 += b * b * (2 * x + 2) + a * a * (-2 * y + 3);
+            x++;
 
-		}
-		else				//下一个点在当前点东南方
-		{
-			d2 += a * a * (-2 * y + 3);
-		}
-		y --;
+        } else //下一个点在当前点东南方
+        {
+            d2 += a * a * (-2 * y + 3);
+        }
+        y--;
 
-		if (IsFilled)	//指定椭圆填充
-		{
-			/*遍历两侧部分*/
-			for (j = -y; j < y; j ++)
-			{
-				/*在指定区域画点，填充部分椭圆*/
-				OLED_DrawPoint(X + x, Y + j);
-				OLED_DrawPoint(X - x, Y + j);
-			}
-		}
+        if (IsFilled) //指定椭圆填充
+        {
+            /*遍历两侧部分*/
+            for (j = -y; j < y; j++) {
+                /*在指定区域画点，填充部分椭圆*/
+                OLED_DrawPoint(X + x, Y + j);
+                OLED_DrawPoint(X - x, Y + j);
+            }
+        }
 
-		/*画椭圆两侧部分圆弧*/
-		OLED_DrawPoint(X + x, Y + y);
-		OLED_DrawPoint(X - x, Y - y);
-		OLED_DrawPoint(X - x, Y + y);
-		OLED_DrawPoint(X + x, Y - y);
-	}
+        /*画椭圆两侧部分圆弧*/
+        OLED_DrawPoint(X + x, Y + y);
+        OLED_DrawPoint(X - x, Y - y);
+        OLED_DrawPoint(X - x, Y + y);
+        OLED_DrawPoint(X + x, Y - y);
+    }
 }
 
 /**
@@ -1407,76 +1393,70 @@ void OLED_DrawEllipse(int16_t X, int16_t Y, uint8_t A, uint8_t B, uint8_t IsFill
   * 返 回 值：无
   * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
   */
-void OLED_DrawArc(int16_t X, int16_t Y, uint8_t Radius, int16_t StartAngle, int16_t EndAngle, uint8_t IsFilled)
-{
-	int16_t x, y, d, j;
+void OLED_DrawArc(int16_t X, int16_t Y, uint8_t Radius, int16_t StartAngle, int16_t EndAngle, uint8_t IsFilled) {
+    int16_t x, y, d, j;
 
-	/*此函数借用Bresenham算法画圆的方法*/
+    /*此函数借用Bresenham算法画圆的方法*/
 
-	d = 1 - Radius;
-	x = 0;
-	y = Radius;
+    d = 1 - Radius;
+    x = 0;
+    y = Radius;
 
-	/*在画圆的每个点时，判断指定点是否在指定角度内，在，则画点，不在，则不做处理*/
-	if (OLED_IsInAngle(x, y, StartAngle, EndAngle))	{OLED_DrawPoint(X + x, Y + y);}
-	if (OLED_IsInAngle(-x, -y, StartAngle, EndAngle)) {OLED_DrawPoint(X - x, Y - y);}
-	if (OLED_IsInAngle(y, x, StartAngle, EndAngle)) {OLED_DrawPoint(X + y, Y + x);}
-	if (OLED_IsInAngle(-y, -x, StartAngle, EndAngle)) {OLED_DrawPoint(X - y, Y - x);}
+    /*在画圆的每个点时，判断指定点是否在指定角度内，在，则画点，不在，则不做处理*/
+    if (OLED_IsInAngle(x, y, StartAngle, EndAngle)) { OLED_DrawPoint(X + x, Y + y); }
+    if (OLED_IsInAngle(-x, -y, StartAngle, EndAngle)) { OLED_DrawPoint(X - x, Y - y); }
+    if (OLED_IsInAngle(y, x, StartAngle, EndAngle)) { OLED_DrawPoint(X + y, Y + x); }
+    if (OLED_IsInAngle(-y, -x, StartAngle, EndAngle)) { OLED_DrawPoint(X - y, Y - x); }
 
-	if (IsFilled)	//指定圆弧填充
-	{
-		/*遍历起始点Y坐标*/
-		for (j = -y; j < y; j ++)
-		{
-			/*在填充圆的每个点时，判断指定点是否在指定角度内，在，则画点，不在，则不做处理*/
-			if (OLED_IsInAngle(0, j, StartAngle, EndAngle)) {OLED_DrawPoint(X, Y + j);}
-		}
-	}
+    if (IsFilled) //指定圆弧填充
+    {
+        /*遍历起始点Y坐标*/
+        for (j = -y; j < y; j++) {
+            /*在填充圆的每个点时，判断指定点是否在指定角度内，在，则画点，不在，则不做处理*/
+            if (OLED_IsInAngle(0, j, StartAngle, EndAngle)) { OLED_DrawPoint(X, Y + j); }
+        }
+    }
 
-	while (x < y)		//遍历X轴的每个点
-	{
-		x ++;
-		if (d < 0)		//下一个点在当前点东方
-		{
-			d += 2 * x + 1;
-		}
-		else			//下一个点在当前点东南方
-		{
-			y --;
-			d += 2 * (x - y) + 1;
-		}
+    while (x < y) //遍历X轴的每个点
+    {
+        x++;
+        if (d < 0) //下一个点在当前点东方
+        {
+            d += 2 * x + 1;
+        } else //下一个点在当前点东南方
+        {
+            y--;
+            d += 2 * (x - y) + 1;
+        }
 
-		/*在画圆的每个点时，判断指定点是否在指定角度内，在，则画点，不在，则不做处理*/
-		if (OLED_IsInAngle(x, y, StartAngle, EndAngle)) {OLED_DrawPoint(X + x, Y + y);}
-		if (OLED_IsInAngle(y, x, StartAngle, EndAngle)) {OLED_DrawPoint(X + y, Y + x);}
-		if (OLED_IsInAngle(-x, -y, StartAngle, EndAngle)) {OLED_DrawPoint(X - x, Y - y);}
-		if (OLED_IsInAngle(-y, -x, StartAngle, EndAngle)) {OLED_DrawPoint(X - y, Y - x);}
-		if (OLED_IsInAngle(x, -y, StartAngle, EndAngle)) {OLED_DrawPoint(X + x, Y - y);}
-		if (OLED_IsInAngle(y, -x, StartAngle, EndAngle)) {OLED_DrawPoint(X + y, Y - x);}
-		if (OLED_IsInAngle(-x, y, StartAngle, EndAngle)) {OLED_DrawPoint(X - x, Y + y);}
-		if (OLED_IsInAngle(-y, x, StartAngle, EndAngle)) {OLED_DrawPoint(X - y, Y + x);}
+        /*在画圆的每个点时，判断指定点是否在指定角度内，在，则画点，不在，则不做处理*/
+        if (OLED_IsInAngle(x, y, StartAngle, EndAngle)) { OLED_DrawPoint(X + x, Y + y); }
+        if (OLED_IsInAngle(y, x, StartAngle, EndAngle)) { OLED_DrawPoint(X + y, Y + x); }
+        if (OLED_IsInAngle(-x, -y, StartAngle, EndAngle)) { OLED_DrawPoint(X - x, Y - y); }
+        if (OLED_IsInAngle(-y, -x, StartAngle, EndAngle)) { OLED_DrawPoint(X - y, Y - x); }
+        if (OLED_IsInAngle(x, -y, StartAngle, EndAngle)) { OLED_DrawPoint(X + x, Y - y); }
+        if (OLED_IsInAngle(y, -x, StartAngle, EndAngle)) { OLED_DrawPoint(X + y, Y - x); }
+        if (OLED_IsInAngle(-x, y, StartAngle, EndAngle)) { OLED_DrawPoint(X - x, Y + y); }
+        if (OLED_IsInAngle(-y, x, StartAngle, EndAngle)) { OLED_DrawPoint(X - y, Y + x); }
 
-		if (IsFilled)	//指定圆弧填充
-		{
-			/*遍历中间部分*/
-			for (j = -y; j < y; j ++)
-			{
-				/*在填充圆的每个点时，判断指定点是否在指定角度内，在，则画点，不在，则不做处理*/
-				if (OLED_IsInAngle(x, j, StartAngle, EndAngle)) {OLED_DrawPoint(X + x, Y + j);}
-				if (OLED_IsInAngle(-x, j, StartAngle, EndAngle)) {OLED_DrawPoint(X - x, Y + j);}
-			}
+        if (IsFilled) //指定圆弧填充
+        {
+            /*遍历中间部分*/
+            for (j = -y; j < y; j++) {
+                /*在填充圆的每个点时，判断指定点是否在指定角度内，在，则画点，不在，则不做处理*/
+                if (OLED_IsInAngle(x, j, StartAngle, EndAngle)) { OLED_DrawPoint(X + x, Y + j); }
+                if (OLED_IsInAngle(-x, j, StartAngle, EndAngle)) { OLED_DrawPoint(X - x, Y + j); }
+            }
 
-			/*遍历两侧部分*/
-			for (j = -x; j < x; j ++)
-			{
-				/*在填充圆的每个点时，判断指定点是否在指定角度内，在，则画点，不在，则不做处理*/
-				if (OLED_IsInAngle(-y, j, StartAngle, EndAngle)) {OLED_DrawPoint(X - y, Y + j);}
-				if (OLED_IsInAngle(y, j, StartAngle, EndAngle)) {OLED_DrawPoint(X + y, Y + j);}
-			}
-		}
-	}
+            /*遍历两侧部分*/
+            for (j = -x; j < x; j++) {
+                /*在填充圆的每个点时，判断指定点是否在指定角度内，在，则画点，不在，则不做处理*/
+                if (OLED_IsInAngle(-y, j, StartAngle, EndAngle)) { OLED_DrawPoint(X - y, Y + j); }
+                if (OLED_IsInAngle(y, j, StartAngle, EndAngle)) { OLED_DrawPoint(X + y, Y + j); }
+            }
+        }
+    }
 }
-
 
 
 /*********************功能函数*/

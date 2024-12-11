@@ -24,15 +24,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b76182c-3bec-40f7-afd0-3070d64854db" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Src/freertos.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/freertos.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h" beforeDir="false" afterPath="$PROJECT_DIR$/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/.cmake/api/v1/reply/index-2024-12-04T08-08-09-0171.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/3.29.6/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/3.29.6/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/3.29.6/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/3.29.6/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/clion-Debug-MinGW _stm32-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/clion-Debug-MinGW _stm32-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.hex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/freertostest.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/freertostest.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oled/OLED.c" beforeDir="false" afterPath="$PROJECT_DIR$/oled/OLED.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +63,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;fangjiajunz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:fangjiajunz/freertos.git&quot;,
+    &quot;accountId&quot;: &quot;900c95bf-8c55-4b43-a6d5-a3413a612a0c&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Core/Inc/FreeRTOSConfig.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/Src/freertos.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Src/main.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Middlewares/Third_Party/FreeRTOS/Source/tasks.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/oled/OLED.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/oled/OLED.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -136,7 +166,11 @@
       <workItem from="1732630677931" duration="5535000" />
       <workItem from="1733278781050" duration="3173000" />
       <workItem from="1733298718760" duration="949000" />
-      <workItem from="1733299683243" duration="1387000" />
+      <workItem from="1733299683243" duration="9611000" />
+      <workItem from="1733404779698" duration="3000" />
+      <workItem from="1733404987416" duration="3364000" />
+      <workItem from="1733472105492" duration="23000" />
+      <workItem from="1733904640404" duration="3300000" />
     </task>
     <servers />
   </component>

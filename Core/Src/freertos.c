@@ -57,36 +57,55 @@ typedef struct {
     char name[16];
 } OledMess;
 
-OledMess oled1 = {0, 0, "hello"};
-OledMess oled2 = {0, 16, "ggggg"};
-OledMess oled3 = {0, 32, "fffff"};
-static uint8_t OledCanUsed = 1;
+static int g_Oled_Can_Used = 1;
+static volatile int g_cal_end = 0;
+static uint64_t g_time = 0;
+static uint32_t g_sum = 0;
 
-void DisplayTask(void *pvParameters) {
-    OledMess *oled = pvParameters;
-    int count = 0;
-    // 初始化显示内容
-    OLED_Clear(); // 清屏
+void SumTask(void *pvParameters) {
+    uint32_t i = 0;
+    TickType_t start_ticks = xTaskGetTickCount();
+    for (i = 0; i < 10000000; i++) {
+        g_sum += 1;
+    }
+    g_cal_end = 1;
+    TickType_t end_ticks = xTaskGetTickCount();
+    g_time = (end_ticks - start_ticks) * portTICK_PERIOD_MS;
+    vTaskDelete(NULL);
+}
+
+void OledShow(void *params) {
+    OLED_ShowString(0, 0, "Waiting..",OLED_8X16);
+    OLED_Update();
     while (1) {
-        // 显示字符串内容
-        if (OledCanUsed) {
-            if (count < 50) {
-                OledCanUsed = 0;
-                //OLED_ShowString(oled->x, oled->y, oled->name, OLED_8X16);
-                //OLED_ShowString((oled->x) + 1, oled->y, ":", OLED_8X16);
-                OLED_ShowNum((oled->x) + 2, oled->y, count++, 6,OLED_8X16);
-                // 更新屏幕
-                OLED_Update();
-                OledCanUsed = 1;
-            } else {
-                OLED_ClearArea(oled->x, oled->y,OLED_8X16 * 8, 16); // 清屏
-                // OLED_ShowString(oled->x, oled->y, oled->name, OLED_8X16);
-                vTaskDelete(NULL);
-            }
+        vTaskDelay(3000);
+        while (g_cal_end == 0);
+        OLED_Clear();
+        OLED_ShowString(0, 0, "Sum : ",OLED_8X16);
+        OLED_UpdateArea(0, 0, 8, 16);
+        if (g_Oled_Can_Used) {
+            g_Oled_Can_Used = 0;
+            OLED_ShowNum(0, 16, g_sum, 10,OLED_8X16);
+            OLED_ShowNum(0, 32, g_time, 10,OLED_8X16);
+            OLED_Update();
+            g_Oled_Can_Used = 1;
         }
-        vTaskDelay(pdMS_TO_TICKS(100)); // 延时 1000ms，避免任务占用过多 CPU 时间
+        vTaskDelete(NULL);
     }
 }
+
+void oledtest(void *params) {
+    OLED_Clear(); // 初始化清屏
+    while (1) {
+        OLED_ShowString(0, 0, "Waiting....", OLED_8X16);
+        OLED_Update(); // 刷新显示
+        vTaskDelay(2000); // 延时 2 秒
+        OLED_ClearArea(0, 0, 127, 16); // 清除特定区域
+        OLED_Update(); // 刷新显示
+        vTaskDelay(900); // 延时 2 秒
+    }
+}
+
 
 /* USER CODE END FunctionPrototypes */
 
@@ -146,30 +165,9 @@ void MX_FREERTOS_Init(void) {
     /* USER CODE BEGIN RTOS_THREADS */
     /* add threads, ... */
     TaskHandle_t oeldtask_handle = NULL;
-    xTaskCreate(
-            DisplayTask, // 任务函数
-            "Display Task1", // 任务名称
-            128, // 任务栈大小（单位：字）
-            &oled1, // 传递给任务的参数
-            1, // 任务优先级
-            &oeldtask_handle // 任务句柄（可选）
-            );
-    xTaskCreate(
-            DisplayTask, // 任务函数
-            "Display Task2", // 任务名称
-            128, // 任务栈大小（单位：字）
-            &oled2, // 传递给任务的参数
-            1, // 任务优先级
-            NULL // 任务句柄（可选）
-            );
-    xTaskCreate(
-            DisplayTask, // 任务函数
-            "Display Task3", // 任务名称
-            128, // 任务栈大小（单位：字）
-            &oled3, // 传递给任务的参数
-            1, // 任务优先级
-            NULL // 任务句柄（可选）
-            );
+    // xTaskCreate(SumTask, "sum", 128, NULL, osPriorityNormal,NULL);
+    // xTaskCreate(OledShow, "sum", 128, NULL, osPriorityNormal,NULL);
+    xTaskCreate(oledtest, "oledtest", 128, NULL, osPriorityNormal,NULL);
     /* USER CODE END RTOS_THREADS */
 
 }
