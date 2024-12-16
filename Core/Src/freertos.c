@@ -51,6 +51,20 @@ osThreadId defaultTaskHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
+static SemaphoreHandle_t xOLEDMutex;
+
+void OLED_LockInit() {
+    xOLEDMutex = xSemaphoreCreateMutex();
+}
+
+void OLED_Lock() {
+    xSemaphoreTake(xOLEDMutex, portMAX_DELAY);
+}
+
+void OLED_Unlock() {
+    xSemaphoreGive(xOLEDMutex);
+}
+
 typedef struct {
     uint8_t x;
     uint8_t y;
@@ -96,16 +110,80 @@ void OledShow(void *params) {
 
 void oledtest(void *params) {
     OLED_Clear(); // 初始化清屏
+    OLED_Update(); // 刷新显示
+
     while (1) {
+        // 显示 "Waiting...."
         OLED_ShowString(0, 0, "Waiting....", OLED_8X16);
         OLED_Update(); // 刷新显示
-        vTaskDelay(2000); // 延时 2 秒
-        OLED_ClearArea(0, 0, 127, 16); // 清除特定区域
+        vTaskDelay(pdMS_TO_TICKS(2000)); // 延时 2 秒
+
+        // 清除显示的内容
+        OLED_ClearArea(0, 0, 127, 16); // 清除区域 (0,0) 到 (127,16)
         OLED_Update(); // 刷新显示
-        vTaskDelay(900); // 延时 2 秒
+        vTaskDelay(pdMS_TO_TICKS(900)); // 延时 0.9 秒
     }
 }
 
+// 定义队列句柄
+QueueHandle_t xTestQueue;
+
+// 发送任务
+void vQueueSendTask(void *pvParameters) {
+    int32_t lValueToSend = 0;
+    while (1) {
+        lValueToSend++;
+        if (xQueueSendToBack(xTestQueue, &lValueToSend, pdMS_TO_TICKS(100)) == pdPASS) {
+            OLED_Lock();
+            OLED_ShowString(0, 0, "Sent:", OLED_8X16);
+            OLED_ShowNum(40, 0, lValueToSend, 4, OLED_8X16);
+            OLED_Unlock();
+        } else {
+            OLED_Lock();
+            OLED_ShowString(0, 0, "Queue Full", OLED_8X16);
+            OLED_Unlock();
+        }
+        OLED_Update();
+        vTaskDelay(pdMS_TO_TICKS(10)); // 1 秒发送一次
+    }
+}
+
+// 接收任务
+void vQueueReceiveTask(void *pvParameters) {
+    int32_t lReceivedValue;
+    while (1) {
+        if (xQueueReceive(xTestQueue, &lReceivedValue, pdMS_TO_TICKS(500)) == pdPASS) {
+            OLED_Lock();
+            OLED_ShowString(0, 16, "Recv:", OLED_8X16);
+            OLED_ShowNum(40, 16, lReceivedValue, 4, OLED_8X16);
+            OLED_Unlock();
+        } else {
+            OLED_Lock();
+            OLED_ShowString(0, 16, "Queue Empty", OLED_8X16);
+            OLED_Unlock();
+        }
+        OLED_Update();
+        vTaskDelay(pdMS_TO_TICKS(2000)); // 延时以避免频繁刷新
+    }
+}
+
+// 初始化队列和任务
+void QueueTestInit(void) {
+    // 创建队列，容量为 5，每个元素大小为 int32_t
+    xTestQueue = xQueueCreate(5, sizeof(int32_t));
+    if (xTestQueue == NULL) {
+        // 队列创建失败，打印调试信息或其他处理
+        OLED_Update();
+        OLED_ShowString(0, 0, "Queue Fail", OLED_8X16);
+        OLED_Update();
+        OLED_Unlock();
+        while (1); // 停止运行
+    }
+    // 创建发送任务
+    xTaskCreate(vQueueSendTask, "SendTask", 200, NULL, 2, NULL);
+    // 创建接收任务
+    xTaskCreate(vQueueReceiveTask, "RecvTask", 200, NULL, 1, NULL);
+}
 
 /* USER CODE END FunctionPrototypes */
 
@@ -138,7 +216,8 @@ void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackTyp
   */
 void MX_FREERTOS_Init(void) {
     /* USER CODE BEGIN Init */
-
+    OLED_Init();
+    OLED_LockInit();
     /* USER CODE END Init */
 
     /* USER CODE BEGIN RTOS_MUTEX */
@@ -154,6 +233,9 @@ void MX_FREERTOS_Init(void) {
     /* USER CODE END RTOS_TIMERS */
 
     /* USER CODE BEGIN RTOS_QUEUES */
+
+    //xTaskCreate(oledtest, "oled", 128,NULL, 1,NULL);
+    QueueTestInit();
     /* add queues, ... */
     /* USER CODE END RTOS_QUEUES */
 
@@ -164,10 +246,7 @@ void MX_FREERTOS_Init(void) {
 
     /* USER CODE BEGIN RTOS_THREADS */
     /* add threads, ... */
-    TaskHandle_t oeldtask_handle = NULL;
-    // xTaskCreate(SumTask, "sum", 128, NULL, osPriorityNormal,NULL);
-    // xTaskCreate(OledShow, "sum", 128, NULL, osPriorityNormal,NULL);
-    xTaskCreate(oledtest, "oledtest", 128, NULL, osPriorityNormal,NULL);
+
     /* USER CODE END RTOS_THREADS */
 
 }
@@ -184,11 +263,7 @@ void StartDefaultTask(void const *argument) {
     /* Infinite loop */
     for (;;) {
         osDelay(1);
-        // OLED_Init();
-        // OLED_ShowString(0, 0, "asdfdsf", OLED_8X16);
-        // OLED_ShowString(0, 16, "Hello, World!", OLED_8X16);
-        // // 更新屏幕
-        // OLED_Update();
+
     }
     /* USER CODE END StartDefaultTask */
 }

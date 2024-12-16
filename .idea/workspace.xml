@@ -24,29 +24,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b76182c-3bec-40f7-afd0-3070d64854db" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Src/freertos.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/freertos.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h" beforeDir="false" afterPath="$PROJECT_DIR$/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/.cmake/api/v1/reply/index-2024-12-04T08-08-09-0171.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/3.29.6/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/3.29.6/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/3.29.6/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/3.29.6/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/clion-Debug-MinGW _stm32-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/clion-Debug-MinGW _stm32-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Core/Src/freertos.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Core/Src/stm32f1xx_it.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/oled/OLED.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/CMakeFiles/freertostest.elf.dir/Core/Src/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.hex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-mingw-_stm32/freertostest.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/freertostest.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/freertostest.ioc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oled/OLED.c" beforeDir="false" afterPath="$PROJECT_DIR$/oled/OLED.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,11 +119,6 @@
     </key>
   </component>
   <component name="RunManager" selected="OpenOCD 下载并运行.freertostest.elf">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="freertostest.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="freertostest" TARGET_NAME="freertostest.elf" CONFIG_NAME="Debug-MinGW _stm32" RUN_TARGET_PROJECT_NAME="freertostest" RUN_TARGET_NAME="freertostest.elf">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -170,7 +154,9 @@
       <workItem from="1733404779698" duration="3000" />
       <workItem from="1733404987416" duration="3364000" />
       <workItem from="1733472105492" duration="23000" />
-      <workItem from="1733904640404" duration="3300000" />
+      <workItem from="1733904640404" duration="4685000" />
+      <workItem from="1733915418640" duration="62000" />
+      <workItem from="1734265510310" duration="5686000" />
     </task>
     <servers />
   </component>
